@@ -3,15 +3,15 @@
 # Setup
 
 1. First clone from repository:\
-   `$ git clone https://github.com/KirillShapovalov/another_great_project.git` \
-   `$ cd another_great_project`
+   `$ git clone https://github.com/KirillShapovalov/dj_my_do_project.git` \
+   `$ cd dj_my_do_project`
 2. Create a virtual environment: \
    `$ virtualenv env` \
    `$ sourcre env/bin/activate`
 3. Install the dependencies: \
    `(env)$ pip install -r requirements.txt`
 4. Once pip has finished downloading the dependencies: \
-   `(env)$ cd AGP` \
+   `(env)$ cd DjangoMySQLDocker` \
    `(env)$ python manage.py runserver`
 
 # First step

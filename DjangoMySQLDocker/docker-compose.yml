@@ -1,20 +1,22 @@
-version: '3'
+version: '3.8'
 
 volumes:
   DMD_db:
 
 services:
   db:
-    image: mysql:5.7
+    image: mysql:latest
     volumes:
       - ./data/DMD_db:/var/lib/mysql
     ports:
       - '3306:3306'
+    env_file:
+      - .env
     environment:
-       MYSQL_DATABASE: 'dj_my_do_db'
-       MYSQL_USER: 'kirill'
-       MYSQL_PASSWORD: 'password'
-       MYSQL_ROOT_PASSWORD: 'password'
+      MYSQL_DATABASE: ${DATABASE_NAME}
+      MYSQL_USER: ${DATABASE_USER}
+      MYSQL_PASSWORD: ${DATABASE_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${DATABASE_PASSWORD}
   web:
     build: .
     command: python manage.py runserver 0.0.0.0:8000

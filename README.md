@@ -30,8 +30,7 @@ then http://localhost:8000/app1/post/sync to synchronize posts.
 
 1. To get the list of all authors / posts go to  **_../app1/authors_** or _**../app1/posts**_ respectively.
 2. To create new author go to **_../app1/author/create/_** (_authorization required_).
-3. To get the detail view of the author go to **_../app1/author/id_**, where **_id_** is id of the author (_
-   authorization required_).
+3. To get the detail view of the author go to **_../app1/author/id_**, where **_id_** is id of the author (_authorization required_).
 4. To update the information about the author go to **_../app1/author/update/id_**, where **_id_** is id of the
    author (_authorization required_).
 5. To delete the author go to **_../app1/author/delete/id_**, where **_id_** is id of the author (_authorization

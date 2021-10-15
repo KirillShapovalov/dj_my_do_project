@@ -34,7 +34,7 @@ class AuthorSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Author
-        fields = ['id', 'name', 'username', 'email', 'address', 'phone', 'website', 'company']
+        fields = ['api_id', 'name', 'username', 'email', 'address', 'phone', 'website', 'company']
         depth = 1
 
 

@@ -2,7 +2,7 @@ from django.db import models
 
 
 class Author(models.Model):
-    id = models.AutoField(primary_key=True, null=False, blank=False)
+    api_id = models.IntegerField(primary_key=True, null=False, blank=True)
     name = models.CharField(max_length=50, null=False, blank=False)
     username = models.CharField(max_length=50, null=False, blank=False)
     email = models.CharField(max_length=50, default=None)
@@ -31,7 +31,7 @@ class Address(models.Model):
 
 
 class Geo(models.Model):
-    id = models.AutoField(primary_key=True, auto_created=True, null=False, blank=False)
+    id = models.AutoField(primary_key=True, null=False, blank=False)
     lat = models.CharField(max_length=100)
     lng = models.CharField(max_length=100)
     address = models.ForeignKey(Address, related_name='geo', on_delete=models.CASCADE)
@@ -43,7 +43,7 @@ class Geo(models.Model):
 
 
 class Company(models.Model):
-    id = models.AutoField(primary_key=True, auto_created=True, null=False, blank=False)
+    id = models.AutoField(primary_key=True, null=False, blank=False)
     name = models.CharField(max_length=100)
     catchPhrase = models.CharField(max_length=100)
     bs = models.CharField(max_length=100)
@@ -56,7 +56,7 @@ class Company(models.Model):
 
 
 class Post(models.Model):
-    user = models.ForeignKey(Author, null=True, blank=True, on_delete=models.CASCADE)
+    author = models.ForeignKey(Author, null=True, blank=True, on_delete=models.CASCADE)
     api_id = models.IntegerField(primary_key=True)
     title = models.CharField(max_length=100, null=False, blank=False)
     body = models.CharField(max_length=1000, null=False, blank=False)

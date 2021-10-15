@@ -1,23 +1,27 @@
 # Django_MySQL_Docker
 
-# Setup
+# Setup via Docker
 
 1. First clone from repository:\
    `$ git clone https://github.com/KirillShapovalov/dj_my_do_project.git` \
    `$ cd dj_my_do_project`
 2. Create a virtual environment: \
    `$ virtualenv env` \
-   `$ sourcre env/bin/activate`
-3. Install the dependencies: \
-   `(env)$ pip install -r requirements.txt`
-4. Once pip has finished downloading the dependencies: \
-   `(env)$ cd DjangoMySQLDocker` \
-   `(env)$ python manage.py runserver`
+   `$ source env/bin/activate`
+3. Go to project folder: \
+   `$ cd DjangoMySQLDocker`
+4. Create your .env file with Django secret key, DB credentials and add API URLs for author/post synchronization: \
+   _**url_posts=https://jsonplaceholder.typicode.com/posts**_ \
+   **_url_authors=https://jsonplaceholder.typicode.com/users_**
+5. Run docker container: \
+   `$ docker-compose build` \
+   `$ docker-compose up`
+6. Server is running now, you're awesome.
 
 # First step
 
-In your browser first navigate to http://localhost:8000/app1/author/sync to synchronize authors and
-then http://localhost:8000/app1/post/sync to synchronize posts.
+In your browser navigate to http://localhost:8000/app1/author/sync to synchronize authors
+or http://localhost:8000/app1/post/sync to synchronize posts.
 
 # Authorization
 
@@ -30,7 +34,8 @@ then http://localhost:8000/app1/post/sync to synchronize posts.
 
 1. To get the list of all authors / posts go to  **_../app1/authors_** or _**../app1/posts**_ respectively.
 2. To create new author go to **_../app1/author/create/_** (_authorization required_).
-3. To get the detail view of the author go to **_../app1/author/id_**, where **_id_** is id of the author (_authorization required_).
+3. To get the detail view of the author go to **_../app1/author/id_**, where **_id_** is id of the author (_
+   authorization required_).
 4. To update the information about the author go to **_../app1/author/update/id_**, where **_id_** is id of the
    author (_authorization required_).
 5. To delete the author go to **_../app1/author/delete/id_**, where **_id_** is id of the author (_authorization
